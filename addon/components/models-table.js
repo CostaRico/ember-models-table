@@ -37,6 +37,7 @@ var defaultMessages = {
  */
 export default Ember.Component.extend({
 
+  selectedId: null,
   /**
    * Number of records shown on one table-page (size of the <code>visibleContent</code>)
    * @type {number}
@@ -532,6 +533,7 @@ export default Ember.Component.extend({
     },
 
     rowClicked(record){
+      this.set('selectedId', record.get('id'));
       this.sendAction('rowClicked', record);
     },
 
