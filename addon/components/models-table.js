@@ -536,6 +536,9 @@ export default Ember.Component.extend({
       this.set('selectedId', record.get('id'));
       this.sendAction('rowClicked', record);
     },
+    staticizeBlock(record){
+      this.sendAction('staticizeBlock', record);
+    },
 
     toggleHidden (column) {
       if (get(column, 'mayBeHidden')) {
